@@ -1,0 +1,18 @@
+Is the order consistent?
+In my case the order is not consistent.
+
+Can you predict it?
+You could theoretically predict it, but you would need to know a lot of
+variables, so it's almost impossible in practic.
+
+What does it depend on?
+It depends on multiple things, for example the instruction pipe in the 
+corresponding processor core, the number of cores, how many processes are executed on each core, etc.
+
+Does it matter if you call "srand(getpid())" before or after the fork?
+Yes it does matter. if you do it before the fork, srand will be initialized with the 
+pid of the parent process, because the RNG is initialized with the same value for every child,
+the pseudo random numbers will be way less random. If you call it after the fork, it will use the pid
+of the corresponding child process, which is different for every child, so the ranom numbers differ between
+the different child processes.
+

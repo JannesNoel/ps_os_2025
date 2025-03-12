@@ -1,0 +1,18 @@
+The Makefile supplies 3 targets.
+
+The first target is 'all', this is a empty command which only has 'zip' as a prerequisite.
+
+The 'zip' target removes the archive if it already exists and then zips all files in the current folder
+into a zip file, with a specified name. It also excludes some unwanted folders which are sometimes created
+depending on the development environment, etc.
+The 'zip' target has 'clean' as a prerequisite.
+
+The 'clean' target loops over all directories that start with "task" and are subdirectories of the current path
+and calls make clean in those directories
+
+To call the file i would just call "make", "make all" or "make zip"
+
+The file is supposed to be put in the "excercise02" directory, that holds the task1 directories
+
+Another use case for make would be the task 1 of last weeks exercise... specifically the creation of the gif's could be 
+handled in a make target (for example "make convert")
