@@ -4,7 +4,7 @@
 # You can use the zipinfo command to check the file structure of an existing archive.
 
 USERNAME = csbb9456
-EXERCISE = 02
+EXERCISE = 01
 
 # This excludes some common directories automatically.
 # Adjust this list according to your setup.
