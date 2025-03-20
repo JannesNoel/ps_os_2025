@@ -1,0 +1,17 @@
+What difference is there between SIGINT and SIGKILL?
+    The SIGINT signal can be caught and the handler can be changed,
+    SIGKILL can't be handled by a custom function
+
+What can the signals SIGSTOP and SIGCONT be used for?
+    For suspending a process (with SIGSTOP) until SIGCONT is called.
+
+What happens when you press CTRL + c while the program is running?
+    A SIGINT signal is sent to the program
+
+What happens when you press CTRL + z while the program is running?
+    A SIGSTOP signal is sent to the program
+
+What happens if another signal is recieved while executing a handler?
+    If it is the same Signal: It is blocked, until the execution of the handler is finished.
+    If it is another Signal: Nothing happens (the other handler is also executed).
+    This behaviour can be adjusted when setting the signal handler.
