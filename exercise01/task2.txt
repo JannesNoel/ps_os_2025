@@ -1,0 +1,34 @@
+Summary of Task2:
+
+Connecting with ssh works with command: "ssh -l [uibk-c-name] zid-gpl.uibk.ac.at" and then entering your password after being prompted
+
+pwd prints the current location in the shell (Print Working Directory = pwd)
+ls lists the files and folders in the current directory (the argument -l displays additional info and displays the info in a list and -a also displays hidden files, so -la is often helpful)
+rm removes one or more specified files and/or directories (the flag -R can be used to recursively delete directories)
+
+grep can be used to filter anything that is passed in it via stdin (example 'ls -la | grep "task_1"')
+
+">" can be used to redirect the output of a command into a specified file (">" will overwrite the contents, to append to the file ">>" can be used)
+
+When opening vim you start in cursor mode by default, pressing the "I" key will start insert mode, where you can enter text.
+Pressing the ESC key goes back to cursor mode, this mode allows commands to be used, which are prefixed with ":".
+To save a file ":save [file_name]" can be used to save the file under specified name in the current directory.
+After saving the command ":q" can be used to exit vim. If no changes were made you can exit with ":q" without saving, or 
+if you don't want to save the changes you can force the exit with ":q!"
+
+"history" displays a history of the last used commands
+
+"cat" prints out the contents of a file
+
+"man" displays the man page of the specified ressource, this page gives a pretty detailed amount of information about the usage and the possible flags/options for the command or parameters and return value for functions, etc.
+"help" gives a similar amount of info for built in terminal commands
+"info" can give you additional information which hasn't been revealed by the man-page
+"apropos" lets the user search for keywords in man pages
+Appending "--help" to a command sometimes prints out helpful infos for that command
+
+"man info" explains what info does
+"man man-pages" explains how man pages are (to be) structured and lists the section (from 1-user commands to 8-system management commands) and does many more things
+"man file-hierarchy" explains the file hierarchy and what the default directories do and also gives aditinal infos to them
+"man printf" shows the printf man-page in section 1 (user commands), while man 3 printf shwos the man page in section 3 (library functions)
+
+to copy to and from another computer the "scp" command can be used (where the syntax is [user]@[computer-name]:/[path on other computer] [path on your computer] and vice verca)
