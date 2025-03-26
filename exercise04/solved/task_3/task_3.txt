@@ -1,0 +1,9 @@
+What happens in your program if two clients with the same name would join? If this would produce an error in your program, how could you mitigate it? Note: You don't have to actually implement it.
+    In my case both users can sent messages from the same username. If one of the disconnects, the other one cant write anything anymore
+
+Why is it important that a message is at most PIPE_BUF long?
+    Because the fifo is a named pipe, so if the underlying pipe Buffer is smaller than the message, the message can potentially overwrite data outside the buffer and cause undefined behaviour (attackers could potentially even exploit this and use a crafted payload to write specific data into specific memory regions)
+
+What file permissions did you use to create and open your FIFOs? Why?
+    I gave everyone read and write permissions (practically the person running the server and client would be the same one (so the same user)),
+    but if we want to simulate a real world scenario, we want to pass messages between multiple different people (users)
