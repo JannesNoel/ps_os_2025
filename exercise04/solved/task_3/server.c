@@ -131,7 +131,6 @@ void pollMessages(char** fifoPaths, int* openFifoFds, int numClients) {
             
                 if (readBytes > 0) {
 
-#ifdef __MACH__
                     // if the message is empty, disconnect the client,
                     // else increase the message counter and print the message
                     if (messageBuf[0] == '\0') {
@@ -140,10 +139,6 @@ void pollMessages(char** fifoPaths, int* openFifoFds, int numClients) {
                         messageCounter++;
                         printf("Message %d: \"%s\" from %s\n", messageCounter, messageBuf, clientName);
                     }
-#else
-                    messageCounter++;
-                    printf("Message %d: \"%s\" from %s\n", messageCounter, messageBuf, clientName);
-#endif
                 } else if (readBytes == 0) {
                     printf("read 0");
                     disconnectClient(&connectedClients[i], clientName);

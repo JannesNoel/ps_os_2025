@@ -52,9 +52,7 @@ int main(int argc, char* argv[]) {
 
         if(fifoBuffer[0] == '\0') {
             connectionOpen = false;
-#ifdef __MACH__
             write(fifoFd, fifoBuffer, strlen(fifoBuffer));
-#endif
             close(fifoFd);
         } 
         
