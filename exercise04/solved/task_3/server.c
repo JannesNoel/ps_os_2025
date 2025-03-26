@@ -131,7 +131,7 @@ void pollMessages(char** fifoPaths, int* openFifoFds, int numClients) {
             
                 if (readBytes > 0) {
 
-                    // if the message is empty, disconnect the client,
+                    // if the message is empty, disconnect the client (bc the bug with poll also appears to happen on the zid server),
                     // else increase the message counter and print the message
                     if (messageBuf[0] == '\0') {
                         disconnectClient(&connectedClients[i], clientName);
@@ -140,7 +140,7 @@ void pollMessages(char** fifoPaths, int* openFifoFds, int numClients) {
                         printf("Message %d: \"%s\" from %s\n", messageCounter, messageBuf, clientName);
                     }
                 } else if (readBytes == 0) {
-                    printf("read 0");
+                    // The bug of poll seems to also occur on linux, so this never triggers
                     disconnectClient(&connectedClients[i], clientName);
                 } else {
                     perror("read");
