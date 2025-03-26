@@ -1,0 +1,12 @@
+Explain what the following operators do: <, >, 2>, 2>&1:
+    1. '<':
+        '<' nimmt die Inhalte einer Datei (die rechts von dem Operator steht) und gibt sie als eingabe in den command, welcher links von dem Operator steht
+
+    2. '>':
+        '>' nimmt die Ausgabe eines Befehls und schreibt sie in eine Datei (wobei die Inhalte der Datei überschrieben werden)
+
+    3. '2>'
+        '2>' nimmt die inhalte die nach stderr geschrieben werden und leitet sie um in die Datei, welche nach dem Operator
+
+    4. '2>&1'
+        '2>&1' nimmt die inhalte, die nach stderr geschrieben werden und leitet sie an stdout um 
