@@ -1,0 +1,16 @@
+How do you set/unset environment variables in your shell?
+    For the current session, you can just type "export VAR_NAME=value"
+    Alternatively you can use "VAR_NAME=value <command> <command_args>"
+    To set it long term "export VAR_NAME=value" has to be added to the config file of your terminal
+
+How can you retrieve the returned exit code in your shell after running the program?
+    It can be retrieved via the environment variable of "$?" (so if one wants to print it out, they can use "echo $?")
+
+In your shell ";", "&&", and "||" can be used to execute multiple commands on a single line. What are the differences between these 3 operators?
+    ";" will run all commands sequentially, independent of the return code
+    "&&" will run the next command only if the previous one has succeeded (it has an exit code of 0)
+    "||" will run the next command only if the previous one has failed (exit code is not 0)
+
+What is the PATH environment variable and why is it important?
+    The PATH lists a bunch of directories, in which the shell will look for executables of commands if it isn't called with a concrete path.
+    For example when running "ls" or "pwd", the executables of theese functions are within one of the folders specified in the path
