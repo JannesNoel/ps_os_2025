@@ -15,8 +15,8 @@ server: server.o
 client: client.o
 	$(CC) $^ -o $@
 
-server.o: server.c
+server.o: server.c common.h
 	$(CC) $(CFLAGS) -c $<
 
-client.o: client.c
+client.o: client.c common.h
 	$(CC) $(CFLAGS) -c $<
