@@ -61,7 +61,7 @@ void makeFifoPaths(int argc, char* argv[], char** fifoPaths) {
         fifoPaths[fifoPathsIndex][fifoNameLen - 1] = '\0';
 
         // Set fifo permissions
-        mode_t mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH;
+        mode_t mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH | S_IWOTH;
 
         // Make the fifo
         int fifoRet = mkfifo(fifoPaths[fifoPathsIndex], mode);
