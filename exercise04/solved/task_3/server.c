@@ -13,6 +13,10 @@
 #define FIFO_BASE_NAME "/tmp/fifo_csbb9456_"
 #define FIFO_BASE_NAME_LEN strlen(FIFO_BASE_NAME)
 
+#ifndef PIPE_BUF
+    #define PIPE_BUF 512 
+#endif
+
 void makeFifoPaths(int argc, char* argv[], char** fifoPaths);
 void waitForConnection(char** fifoPaths, int* openFifoFds, int numClients);
 void pollMessages(char** fifoPaths, int* openFifoFds, int numClients);

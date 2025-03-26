@@ -7,9 +7,12 @@
 #include <fcntl.h>
 #include <unistd.h>
 
-
 #define FIFO_BASE_NAME "/tmp/fifo_csbb9456_"
 #define FIFO_BASE_NAME_LEN strlen(FIFO_BASE_NAME)
+
+#ifndef PIPE_BUF
+    #define PIPE_BUF 512 
+#endif
 
 int main(int argc, char* argv[]) {
     if (argc != 2) {
