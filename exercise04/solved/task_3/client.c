@@ -52,12 +52,12 @@ int main(int argc, char* argv[]) {
 
         if(fifoBuffer[0] == '\0') {
             connectionOpen = false;
-            write(fifoFd, fifoBuffer, strlen(fifoBuffer));
+            write(fifoFd, fifoBuffer, fifoMessageLen);
             close(fifoFd);
         } 
         
         if (connectionOpen) {
-            write(fifoFd, fifoBuffer, strlen(fifoBuffer));
+            write(fifoFd, fifoBuffer, fifoMessageLen);
         }
     }
 
