@@ -53,3 +53,4 @@ bool stringIsNumber(char* str) {
 
     return false;
 }
+

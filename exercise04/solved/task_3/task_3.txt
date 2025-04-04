@@ -7,3 +7,4 @@ Why is it important that a message is at most PIPE_BUF long?
 What file permissions did you use to create and open your FIFOs? Why?
     I gave everyone read and write permissions (practically the person running the server and client would be the same one (so the same user)),
     but if we want to simulate a real world scenario, we want to pass messages between multiple different people (users)
+
